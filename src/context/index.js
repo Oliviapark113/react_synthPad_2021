@@ -9,6 +9,7 @@ const defaultContext = {
 const AppContext = createContext(defaultContext)
 
 const reducer = (state, action) => {
+  // console.log(action)
   switch(action.type) {
     case 'CHANGE_SCALE':
       return {
@@ -28,7 +29,7 @@ const AppProvider = ({ children }) => {
  
   const [state, dispatch] = useReducer(reducer, defaultContext)
 
-  console.log(state)
+  // console.log(state)
 
   return (
     <AppContext.Provider value={{ state, dispatch }}>
