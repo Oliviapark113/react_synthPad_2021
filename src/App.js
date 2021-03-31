@@ -1,10 +1,11 @@
 
 import {AppProvider} from "./context"
+import ScaleSelector from "./components/scale-selector"
 
 function App() {
   return (
     <AppProvider>
-      <div>Syth App</div>
+      <ScaleSelector />
     </AppProvider>
   );
 }
