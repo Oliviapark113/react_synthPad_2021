@@ -1,5 +1,20 @@
 import {useAppContext} from '../context/'
 import scales from "../utils/scales"
+import styled from "styled-components"
+
+const Select = styled.select`
+      font-size: 24px; 
+      border: 2px solid black;
+      border-radius: 10px; 
+      padding: 0px; 
+      background: transparent;
+      ${props => props.theme === "light" ?`` :`
+      color: white;
+      border-color: white;
+      ` }
+   
+
+`
 
 
 const categories = Object.entries(scales).reduce((accumulator, curr)=>{
@@ -17,9 +32,9 @@ console.log(categories)
 // }
 
 const ScaleSelector = () =>{
-    const { dispatch } = useAppContext()
+    const { state, dispatch } = useAppContext()
     return(
-        <select onChange = { e => dispatch({ type:"CHANGE_SCALE",  payload: e.target.value})}>
+        <Select theme ={state.theme} onChange = { e => dispatch({ type:"CHANGE_SCALE",  payload: e.target.value})}>
 
      {Object.entries(categories).map(cat => { 
          const [categoryName, scaleNames] = cat
@@ -29,7 +44,7 @@ const ScaleSelector = () =>{
             </optgroup>
         )
      })}
-        </select>
+        </Select>
     )
 }
 

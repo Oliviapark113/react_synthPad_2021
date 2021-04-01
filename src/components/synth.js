@@ -17,6 +17,8 @@ const Synth = () => {
   const synth = state.theme === 'light' ? 
     new FMSynth()
   : new DuoSynth()
+
+  synth.volume.value = state.volume
   
   synth.toDestination()
 
@@ -30,8 +32,10 @@ const Synth = () => {
 
   const playSound = letterPressed => {
     const foundNote = state.notes.find(note => note.letter === letterPressed)
-    console.log(foundNote)
+    if(foundNote){
       synth.triggerAttackRelease(foundNote.note, "8n")
+    }
+   
   }
 
     return (
