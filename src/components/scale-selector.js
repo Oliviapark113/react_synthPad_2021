@@ -11,6 +11,14 @@ const Select = styled.select`
       ${props => props.theme === "light" ?`` :`
       color: white;
       border-color: white;
+
+      @media screen and (max-width:768px){
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+       align-items: center;
+      
+      }
       ` }
    
 

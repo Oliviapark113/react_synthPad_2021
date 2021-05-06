@@ -24,6 +24,8 @@ const Button = styled.button`
     position: relative;
     top: 6px;
   `}
+
+
 `
 
 const Pad = ({color, note, letter, playSound}) =>{

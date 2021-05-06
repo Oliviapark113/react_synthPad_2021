@@ -9,6 +9,13 @@ display: grid;
 grid-template-columns: repeat(6, 1fr);
 grid-gap: 15px;
 
+@media screen and (max-width:768px){
+  display: grid; 
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 15px;
+
+}
+
 
 `
 const Synth = () => {

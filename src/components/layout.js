@@ -7,6 +7,14 @@ justify-content: space-between;
 align-items: center;
 margin-bottom: 25px;
 
+@media screen and (max-width:768px){
+   display: flex;
+   flex-direction: column;
+   flex-wrap: nowrap;
+  align-items: center;
+ 
+ }
+
 `
 
 const Background = styled.div`
