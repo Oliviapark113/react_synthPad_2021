@@ -1,7 +1,6 @@
 import React, {useRef} from 'react'
 import { Donut } from 'react-dial-knob'
 import { useAppContext } from "../context"
-import './css/volume.css'
 
 export default function Volume() {
 
